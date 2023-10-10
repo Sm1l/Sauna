@@ -1,0 +1,16 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 20%;
+  background-image: url("/src/assets/images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    min-height: 30%;
+  }
+}

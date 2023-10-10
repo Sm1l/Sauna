@@ -1,0 +1,35 @@
+.countItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80px;
+}
+
+.count {
+  color: var(--colorSoftRed);
+  font-size: 3rem;
+}
+
+.text {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  opacity: 0.5;
+  padding-left: 4px;
+}
+
+@media (min-width: 768px) {
+  .countItem {
+    width: 150px;
+  }
+  .count {
+    font-size: 6rem;
+  }
+  .text {
+    font-size: 0.8rem;
+    letter-spacing: 8px;
+    padding-left: 8px;
+  }
+}

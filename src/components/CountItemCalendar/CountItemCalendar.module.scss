@@ -1,0 +1,141 @@
+.countItemCalendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  //   width: 80px;
+}
+
+.count {
+  position: relative;
+  font-size: 3rem;
+  box-shadow: 0 7px 3px 0 rgb(21, 21, 21);
+  width: 80px;
+  height: 100px;
+}
+
+.top {
+  background-color: var(--colorVeryDarkBlue);
+}
+
+.bottom {
+  background-color: var(--colorVeryDark);
+}
+
+.text {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  opacity: 0.5;
+  padding-left: 4px;
+}
+
+//*---------------------------------
+
+.top,
+.bottom,
+.upperFlip,
+.lowerFlip {
+  padding: 14px 4px;
+  overflow: hidden;
+  height: 50px;
+}
+
+.upperFlip,
+.lowerFlip {
+  will-change: transform;
+}
+
+.top,
+.upperFlip {
+  background-color: rgb(43, 44, 68);
+  box-shadow: 0 0 5px 0 rgba(71, 83, 115, 0.7) inset;
+  background-color: var(--colorDarkDesaturatedBlue);
+  border-radius: 5px 5px 0 0;
+  color: var(--colorSoftRedTop);
+}
+
+.bottom,
+.lowerFlip {
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 5px 0 rgba(71, 83, 115, 0.7) inset;
+  background-color: var(--colorVeryDarkBlue);
+  color: var(--colorSoftRed);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.upperFlip {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform-origin: bottom;
+}
+
+.lowerFlip {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform-origin: top;
+}
+
+.count::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  left: -5px;
+  top: 46px;
+  background-color: var(--colorVeryDark);
+  z-index: 1;
+}
+
+.count::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  right: -5px;
+  top: 46px;
+  background-color: var(--colorVeryDark);
+}
+
+@media (min-width: 768px) {
+  .countItemCalendar {
+  }
+  .count {
+    font-size: 6rem;
+    width: 150px;
+    height: 188px;
+  }
+  .text {
+    font-size: 0.8rem;
+    letter-spacing: 8px;
+    padding-left: 8px;
+  }
+  .top,
+  .bottom,
+  .upperFlip,
+  .lowerFlip {
+    padding: 22px 9px;
+    height: 94px;
+  }
+
+  .count::before {
+    width: 10px;
+    height: 10px;
+    left: -5px;
+    top: 90px;
+  }
+
+  .count::after {
+    width: 10px;
+    height: 10px;
+    right: -5px;
+    top: 90px;
+  }
+}
