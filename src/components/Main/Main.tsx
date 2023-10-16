@@ -7,7 +7,7 @@ import { CountContainer } from "../CountContainer";
 interface MainProps {}
 
 const Main: React.FC<MainProps> = () => {
-  const finalDate = +new Date("2023 Oct 20 17:30:00");
+  const finalDate = +new Date("2023 Oct 25 18:30:00");
   // const finalDate = +new Date("2023 Oct 10 14:59:50");
   const [countIsVisible, setCountIsVisible] = useState(true);
 
