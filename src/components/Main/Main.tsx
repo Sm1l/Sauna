@@ -34,7 +34,7 @@ const Main: React.FC<MainProps> = () => {
             transition={{ delay: 1, duration: 1, type: "spring" }}
             className={styles.title}
           >
-            Эй! Ты почему еще не в бане?
+            {/* Эй! Ты почему еще не в бане? */}В ожидании ноябрьского похода в баню!
           </motion.h1>
         </AnimatePresence>
       )}
