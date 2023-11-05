@@ -28,13 +28,6 @@ const CountContainer: React.FC<CountContainerProps> = ({ finalDate, setCountIsVi
   const [minutes, setMinutes] = useState<number>(0);
   const [seconds, setSeconds] = useState<number>(0);
 
-  // const formatter = new Intl.NumberFormat("ru", {
-  //   style: "unit",
-  //   unit: "day",
-  //   unitDisplay: "long",
-  // });
-  // console.log(formatter.format(23));
-
   useEffect(() => {
     setDays(Math.floor(timeLeft / 1000 / 60 / 60 / 24));
     setHours(Math.floor(timeLeft / 1000 / 60 / 60) % 24);

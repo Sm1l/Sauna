@@ -36,7 +36,7 @@ const CountItemCalendar: React.FC<CountItemCalendarProps> = ({ number, text }) =
   };
   const dhms: string = getDHMS(number);
 
-  //! useMemo?
+  //! useMemo? для анимации dhms
 
   return (
     <motion.div className={styles.countItemCalendar}>
