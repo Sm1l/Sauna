@@ -7,8 +7,17 @@ import { CountContainer } from "../CountContainer";
 interface MainProps {}
 
 const Main: React.FC<MainProps> = () => {
-  // const finalDate = +new Date("2023 Nov 17 18:30:00");
-  const finalDate = +new Date("2024 Jan 1 00:00:00");
+  const dateOptions: Intl.DateTimeFormatOptions = {
+    day: "2-digit",
+    month: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+  };
+
+  const finalDate = +new Date("2023 Nov 17 17:40:00");
+  const dateFormat = new Intl.DateTimeFormat("ru", dateOptions);
+
+  // const finalDate = +new Date("2024 Jan 1 00:00:00");
   const [countIsVisible, setCountIsVisible] = useState(true);
 
   useEffect(() => {
@@ -18,15 +27,19 @@ const Main: React.FC<MainProps> = () => {
   return (
     <main className={styles.main}>
       {countIsVisible ? (
-        <motion.h1
+        <motion.div
           initial={{ y: "-1000px" }}
           animate={{ y: "0px" }}
           transition={{ delay: 1, duration: 1, type: "spring" }}
-          className={styles.title}
+          className={styles.container}
         >
-          В ожидании ноябрьского похода в баню! <br /> А пока вот вам счетчик до Нового Года:
-          {/* До встречи в бане осталось: */}
-        </motion.h1>
+          <p className={styles.text}>
+            {/* В ожидании ноябрьского похода в баню! <br /> А пока вот вам счетчик до Нового Года: */}
+            Ноябрьский поход в баню состоится <br />
+            <span className={styles.colorSpan}>{dateFormat.format(finalDate)}</span>
+          </p>
+          <h1 className={styles.title}>До встречи в бане осталось:</h1>
+        </motion.div>
       ) : (
         <AnimatePresence>
           <motion.h1
