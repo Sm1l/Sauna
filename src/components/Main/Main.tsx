@@ -14,10 +14,10 @@ const Main: React.FC<MainProps> = () => {
     minute: "2-digit",
   };
 
-  const finalDate = +new Date("2023 Nov 17 17:40:00");
+  const finalDate = +new Date("2024 Jan 30 18:45:00");
+  // const finalDate = +new Date("2024 Jan 1 00:00:00");
   const dateFormat = new Intl.DateTimeFormat("ru", dateOptions);
 
-  // const finalDate = +new Date("2024 Jan 1 00:00:00");
   const [countIsVisible, setCountIsVisible] = useState(true);
 
   useEffect(() => {
@@ -27,32 +27,34 @@ const Main: React.FC<MainProps> = () => {
   return (
     <main className={styles.main}>
       {countIsVisible ? (
-        <motion.div
-          initial={{ y: "-1000px" }}
-          animate={{ y: "0px" }}
-          transition={{ delay: 1, duration: 1, type: "spring" }}
-          className={styles.container}
-        >
-          <p className={styles.text}>
-            {/* В ожидании ноябрьского похода в баню! <br /> А пока вот вам счетчик до Нового Года: */}
-            Ноябрьский поход в баню состоится <br />
-            <span className={styles.colorSpan}>{dateFormat.format(finalDate)}</span>
-          </p>
-          <h1 className={styles.title}>До встречи в бане осталось:</h1>
-        </motion.div>
-      ) : (
-        <AnimatePresence>
-          <motion.h1
+        <>
+          <motion.div
             initial={{ y: "-1000px" }}
             animate={{ y: "0px" }}
             transition={{ delay: 1, duration: 1, type: "spring" }}
-            className={styles.title}
+            className={styles.container}
           >
-            Эй! Ты почему еще не в бане?
-          </motion.h1>
+            <p className={styles.text}>
+              {/* В ожидании декабрьского похода в баню! <br /> А до Нового Года осталось: <br /> */}
+              Декабрьский поход в баню состоится <br />
+              <span className={styles.colorSpan}>{dateFormat.format(finalDate)}</span>
+            </p>
+            <h1 className={styles.title}>До встречи в бане осталось:</h1>
+          </motion.div>
+          <CountContainer finalDate={finalDate} setCountIsVisible={setCountIsVisible} />
+        </>
+      ) : (
+        <AnimatePresence>
+          <motion.div
+            initial={{ y: "-1000px" }}
+            animate={{ y: "0px" }}
+            transition={{ delay: 1, duration: 1, type: "spring" }}
+            className={styles.container}
+          >
+            <h1 className={styles.title}>Эй! Ты почему еще не в бане?</h1>
+          </motion.div>
         </AnimatePresence>
       )}
-      {countIsVisible && <CountContainer finalDate={finalDate} setCountIsVisible={setCountIsVisible} />}
     </main>
   );
 };
