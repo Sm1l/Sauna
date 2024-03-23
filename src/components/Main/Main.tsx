@@ -14,7 +14,7 @@ const Main: React.FC<MainProps> = () => {
     minute: "2-digit",
   };
 
-  const finalDate = +new Date("2024 Jan 30 18:45:00");
+  const finalDate = +new Date("2024 Mar 27 18:45:00");
   // const finalDate = +new Date("2024 Jan 1 00:00:00");
   const dateFormat = new Intl.DateTimeFormat("ru", dateOptions);
 
@@ -36,8 +36,9 @@ const Main: React.FC<MainProps> = () => {
           >
             <p className={styles.text}>
               {/* В ожидании декабрьского похода в баню! <br /> А до Нового Года осталось: <br /> */}
-              Декабрьский поход в баню состоится <br />
+              Мартовский поход в баню состоится <br />
               <span className={styles.colorSpan}>{dateFormat.format(finalDate)}</span>
+              {/* <p className={styles.colorSpan}>Внимание! Встреча в высшем разряде! </p> */}
             </p>
             <h1 className={styles.title}>До встречи в бане осталось:</h1>
           </motion.div>
